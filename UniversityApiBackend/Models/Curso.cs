@@ -16,7 +16,16 @@ namespace UniversityApiBackend.Models
         [Required] 
         public string Requisito { get; set; } = string.Empty;
         [Required]
-        public Nivel Nivel { get; set;}
+        public Nivel Nivel { get; set; } = Nivel.Basico;
+
+        [Required]
+        public ICollection<Category> Categories { get; set; } = new List<Category>();
+        [Required]
+        public Chapter Chapter{ get; set; } = new Chapter();
+        [Required]
+        public ICollection<Student> Students { get; set; } = new List<Student>();
+
+
     }
 
     public enum Nivel
